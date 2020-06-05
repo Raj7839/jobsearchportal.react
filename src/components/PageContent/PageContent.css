@@ -1,0 +1,10 @@
+.company-logo {
+  width: 100px !important;
+  height: 90px !important;
+}
+.footer {
+  width: 100%;
+}
+.card-css {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
