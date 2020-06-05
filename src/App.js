@@ -33,7 +33,7 @@ class App extends Component {
       jobs: [],
       tech: "",
       location: "",
-      spinnerDisp: "",
+      spinnerDisc: "",
       page: 0
     };
   }
@@ -55,7 +55,7 @@ class App extends Component {
       alert("Please Fill the required fields.");
     } else {
       this.setState({
-        spinnerDisp: <div className="loader"></div>,
+        spinnerDisc: <div className="loader"></div>,
         page: 1
       });
       axios
@@ -64,7 +64,7 @@ class App extends Component {
         )
         .then(res => {
           this.setState({
-            spinnerDisp: ""
+            spinnerDisc: ""
           });
           if (res.data.length === 0) {
             alert("No Jobs Found !!");
@@ -80,16 +80,16 @@ class App extends Component {
   nextPage = () => {
     this.setState({
       jobs: [],
-      spinnerDisp: <div className="loader"></div>,
+      spinnerDisc: <div className="loader"></div>,
       page: this.state.page + 1
     });
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?description=${this.state.tech}&location=${this.state.location}&page=${this.state.page}`
+        `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?description=${this.state.tech}&location=${this.state.location}&full_time=true&page=${this.state.page}`
       )
       .then(res => {
         this.setState({
-          spinnerDisp: ""
+          spinnerDisc: ""
         });
         if (res.data.length === 0) {
           alert("No Jobs Found !!");
@@ -107,16 +107,16 @@ class App extends Component {
   prevPage = () => {
     this.setState({
       jobs: [],
-      spinnerDisp: <div className="loader"></div>,
+      spinnerDisc: <div className="loader"></div>,
       page: this.state.page - 1
     });
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?description=${this.state.tech}&location=${this.state.location}&page=${this.state.page}`
+        `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?description=${this.state.tech}&location=${this.state.location}&full_time=true&page=${this.state.page}`
       )
       .then(res => {
         this.setState({
-          spinnerDisp: ""
+          spinnerDisc: ""
         });
         if (res.data.length === 0) {
           alert("No Jobs Found !!");
@@ -136,16 +136,16 @@ class App extends Component {
       this.state.page === 0 ? (
         ""
       ) : (
-        <div className="row flex-row justify-content-center p-3">
+        <div className="center">
           <button
-            className="btn btn-outline-dark mx-3 btn-page"
+            className="f6 bw1 dim ba ph2 pv1 mb3 pa3 dib dark-gray pointer br3"
             onClick={this.prevPage}
           >
             Prev
           </button>
-          <h5 className="my-2">{this.state.page}</h5>
+          <h5 className="ma2 f6">{this.state.page}</h5>
           <button
-            className="btn btn-outline-dark mx-3 btn-page"
+            className="f6 bw1 dim ba ph2 pv1 pa3 mb3 dib dark-gray br3 pointer"
             onClick={this.nextPage}
           >
             Next
@@ -161,8 +161,8 @@ class App extends Component {
           getTechType={this.getTechType}
           getLocation={this.getLocation}
         />
-        <div className="center">{this.state.spinnerDisp}</div>
-        <PageContent jobs={this.state.jobs} />
+        <div className="center">{this.state.spinnerDisc}</div>
+        <PageContent className="center" jobs={this.state.jobs} />
         {page}
       </div>
     );
