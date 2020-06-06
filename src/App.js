@@ -162,7 +162,7 @@ class App extends Component {
           getLocation={this.getLocation}
         />
         <div className="center">{this.state.spinnerDisc}</div>
-        <PageContent className="center" jobs={this.state.jobs} />
+        <PageContent jobs={this.state.jobs} />
         {page}
       </div>
     );
