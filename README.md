@@ -1,3 +1,47 @@
+Job Search Portal Using React and Github Job Search Api !!
+
+Please download or the clone the Repository and then Run
+
+"npm install"
+
+Command and then start the development server with
+
+"npm start"
+
+Then the browser will pop as localhost
+
+" http://localhost:3000/ "
+
+This project includes below supporting libraries:
+->create-react-app for providing the entire react setup "https://create-react-app.dev/docs/getting-started/"
+
+-> Tachyons for styling "https://tachyons.io/"
+
+-> Axios for Api calls "https://www.npmjs.com/package/axios"
+
+-> Particles-js for the Background "https://www.npmjs.com/package/react-particles-js"
+
+==> API
+Github Job Search Api "https://jobs.github.com/api"
+
+==>Styling of Input Form has Css3 Pattern "https://leaverou.github.io/css3patterns/#lined-paper"
+
+==> Parts which are incomplete:
+
+-> I was not able to add sorting by column, I feel I need too much time to understand it and I was not able able to find any help online too, If you guys can help me out with it or direct me in right direction that will help
+
+==> Consideration :
+
+-> Adding the functionality where you can hover with the mouse on the particles background, I dont know you might like it or no but i was amazed by it :)
+
+-> I took the Entire day to design the response table like layout using tachyons i have tried all the things mentioned in the Tachyons Documentation later made a custom CSS class to centralize it
+
+-> Added Spinner Disc and Pagination
+
+-> The Look and Feel of the Application
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
